@@ -1,0 +1,33 @@
+def binomialPlot( n, p ) :
+    """
+    Let's plot a binomial distribution
+    """
+
+# import required libraries
+  
+    from matplotlib import use
+    use( 'Agg' ) # use file output instead of a graphical window
+    from matplotlib.pyplot import plot, savefig
+    from scipy import zeros
+
+    x = range( n )
+    y = x
+    plot( x, y, 'ko' )
+
+
+    savefig( "binomialplot.png", dpi=50 ) #!!
+
+if __name__ == '__main__' :
+    
+    # constants
+    n = 30 # the number of experiments
+    p = 1.0 / 6.0 # the probability of 'success'
+
+    print """
+    This program plots the binomial distribution, B( k; n, p ), for an
+    experiment in which a die is rolled 30 times (ie n=30) and 'success' is
+    rolling a one (ie p=1/6).
+    """
+
+    # call the function 
+    binomialPlot( n, p )
